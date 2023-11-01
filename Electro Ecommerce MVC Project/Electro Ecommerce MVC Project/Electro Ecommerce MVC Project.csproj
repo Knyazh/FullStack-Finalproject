@@ -8,11 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Database\" />
     <Folder Include="Services\" />
-    <Folder Include="Views\" />
-    <Folder Include="wwwroot\ViewModels\" />
+    <Folder Include="wwwroot\Source\JS\" />
   </ItemGroup>
 
   <ItemGroup>
