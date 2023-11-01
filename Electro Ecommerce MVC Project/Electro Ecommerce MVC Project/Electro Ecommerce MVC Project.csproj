@@ -2,19 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Electro_Ecommerce_MVC_Project</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
+    <Folder Include="Database\Models\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\Source\JS\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.24" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
   </ItemGroup>
 
 </Project>
