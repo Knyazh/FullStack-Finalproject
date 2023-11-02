@@ -4,7 +4,7 @@ public class Memory
 {
 
     public int Id { get; set; }
-    public decimal Count { get; set; }
+    public string Count { get; set; }
     public DateTime CreatedDate  { get; set; }
     public DateTime UpdatedDate { get; set; }
 
