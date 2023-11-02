@@ -24,11 +24,6 @@ public class Program
 
 
 
-
-
-
-
-
         var app = builder.Build();
 
         app.UseStaticFiles();
