@@ -10,4 +10,10 @@ public class Product
     public string PhysicalImageName { get; set;}
     public DateTime CreateDate { get; set; }
     public DateTime UpdateDate { get; set; }
+
+
+    public List<ProductCategory> ProductCategories { get; set;}
+    public List<ProductColor> ProductColors { get; set; }
+
+    public List<ProductMemory> ProductMemories { get; set; }
 }

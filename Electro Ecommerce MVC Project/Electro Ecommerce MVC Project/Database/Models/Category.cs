@@ -8,7 +8,6 @@ public class Category
 
     public DateTime CreatedDate { get; set; }
     public DateTime UpdatedDate { get; set;}
-
-
+    public List<ProductCategory> ProductCategories { get; set; }
 
 }
