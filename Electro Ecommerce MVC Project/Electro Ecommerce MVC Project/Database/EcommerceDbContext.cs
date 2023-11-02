@@ -1,4 +1,5 @@
 ﻿using Electro_Ecommerce_MVC_Project.Database.Base;
+using Electro_Ecommerce_MVC_Project.Database.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
 
@@ -46,5 +47,6 @@ public class EcommerceDbContext : DbContext
     }
 
 
-    //public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }
 }
