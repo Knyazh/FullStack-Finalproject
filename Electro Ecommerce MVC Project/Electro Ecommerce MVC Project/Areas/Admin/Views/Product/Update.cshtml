@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductUpdateViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
-    <style>
+    <style> 
         /* Stil düzenlemesi */
 form {
     max-width: 500px;
@@ -121,15 +121,16 @@ img {
         <select id="SizeIds" class="selectpicker" name="SizeIds" asp-for="SizeIds" multiple data-live-search="true">
             <option disabled>Select the color or colors</option>
             <!-- You can use Model.Sizes to display existing sizes -->
-            @foreach (var size in Model.Sizes)
+            @foreach (var memory in Model.Memories)
             {
-                <option selected disabled>@size.Name</option>
+                <option selected disabled>@memory.Count</option>
             }
             <!-- To add new sizes, use select options -->
-            @foreach (var newSize in Model.NewSizes)
+            @foreach (var newMemory in Model.NewMemories)
             {
-                <option value="@newSize.Id">@newSize.Name</option>
+                <option value="@newMemory.Id">@newMemory.Count</option>
             }
+
         </select>
         <span asp-validation-for="SizeIds" class="invalid-feedback" style="display: block"></span>
 

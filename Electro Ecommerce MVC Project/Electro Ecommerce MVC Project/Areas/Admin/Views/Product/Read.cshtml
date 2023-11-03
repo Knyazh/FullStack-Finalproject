@@ -1,4 +1,5 @@
-﻿
+﻿@model List<ProductListItemViewModel>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,9 +66,9 @@
                             }
                         </td>
                         <td>
-                            @foreach (var size in product.Sizes)
+                            @foreach (var memory in product.Memories)
                             {
-                                @size.Name
+                                @memory.Count
                             }
                         </td>
                         <td>
@@ -115,8 +116,8 @@
                         <p><strong>Name:</strong> @product.Name</p>
                         <p><strong>Description:</strong> @product.Description</p>
                         <p><strong>Price:</strong> @product.Price</p>
-                        <p><strong>Colors:</strong> @string.Join(", ", product.Colors.Select(c => c.Name))</p>
-                        <p><strong>Sizes:</strong> @string.Join(", ", product.Sizes.Select(s => s.Name))</p>
+                        <p><strong>Colors:</strong> @string.Join(", ", product.Colors.Select(c=>c.Name))</p>
+                        <p><strong>Sizes:</strong> @string.Join(", ", product.Memories.Select(m => m.Count))</p>
                         <p><strong>Categories:</strong> @string.Join(", ", product.Categories.Select(cat => cat.Name))</p>
                         <div style="width:100%; display:flex; justify-content:center">
                             <img src="@product.ImageUrl" alt="Product Image" style="width:200px;height:200px;" class="img-fluid" />

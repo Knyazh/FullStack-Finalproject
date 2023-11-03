@@ -205,6 +205,8 @@ public class EcommerceDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Color> Colors { get; set; }
+    public DbSet<Memory> Memories { get; set; }
+
     public DbSet<ProductCategory> ProductCategories { get; set; }
     public DbSet<ProductColor> ProductColors { get; set; }
     public DbSet<ProductMemory> ProductMemories { get; set; }

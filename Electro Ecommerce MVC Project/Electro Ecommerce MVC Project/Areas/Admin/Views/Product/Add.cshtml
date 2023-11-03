@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductAddViewModel
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,15 +38,15 @@
                         <span asp-validation-for="Price"></span>
                     </div>
                     <div id="FormGroup">
-                        <label asp-for="SizeIds">Size</label>
-                        <select class="selectpicker" asp-for="SizeIds" multiple data-live-search="true">
+                        <label asp-for="MemoryIds">Size</label>
+                        <select class="selectpicker" asp-for="MemoryIds" multiple data-live-search="true">
                             <option disabled>Select the size or sizes</option>
-                            @foreach (var size in Model.Sizes)
+                            @foreach (var memory in Model.Memories)
                             {
-                                <option value="@size.Id">@size.Name</option>
+                                <option value="@memory.Id">@memory.Count</option>
                             }
                         </select>
-                        <span asp-validation-for="SizeIds" class="invalid-feedback" style="display: block"></span>
+                        <span asp-validation-for="MemoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>
                     <div id="FormGroup">
                         <label asp-for="ColorIds">Color</label>
