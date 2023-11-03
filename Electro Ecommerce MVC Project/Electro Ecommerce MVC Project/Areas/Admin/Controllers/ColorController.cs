@@ -3,7 +3,7 @@ using Electro_Ecommerce_MVC_Project.Database;
 using Electro_Ecommerce_MVC_Project.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace E_Commerce_Platform.Areas.Admin.Controllers
+namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
 {
 
     [Route("admin/colors")]
@@ -32,8 +32,8 @@ namespace E_Commerce_Platform.Areas.Admin.Controllers
             }
             Color color = new Color
             {
-                Name = model.colorName,
-                Code = model.colorCode,
+                Name = model.ColorName,
+                Code = model.ColorCode,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow
             };
@@ -79,8 +79,8 @@ namespace E_Commerce_Platform.Areas.Admin.Controllers
             {
                  var color = _dbContext.Colors.SingleOrDefault(c => c.Id.Equals(colorId));
                  if (color is null) return Json(new { success = false, message = "Invalid data...Category not available!" });
-                 color.Name = model.colorName;
-                 color.Code = model.colorCode;
+                 color.Name = model.ColorName;
+                 color.Code = model.ColorCode;
                  color.UpdatedAt = DateTime.UtcNow;  
                  _dbContext.Colors.Update(color);    
                  _dbContext.SaveChanges();

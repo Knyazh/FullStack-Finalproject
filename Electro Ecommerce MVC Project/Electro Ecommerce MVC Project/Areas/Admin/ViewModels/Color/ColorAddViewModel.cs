@@ -2,7 +2,7 @@
 {
     public class ColorAddViewModel
     {
-        public string colorName {  get; set; }  
-        public string colorCode { get; set; }
+        public string ColorName {  get; set; }  
+        public string ColorCode { get; set; }
     }
 }

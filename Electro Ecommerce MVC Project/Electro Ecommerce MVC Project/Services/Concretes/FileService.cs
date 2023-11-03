@@ -1,8 +1,9 @@
 ﻿using Electro_Ecommerce_MVC_Project.Contracts;
+using Electro_Ecommerce_MVC_Project.Services.Abstracts;
 
 namespace Electro_Ecommerce_MVC_Project.Services.Concretes;
 
-public class FileService
+public class FileService : IFileService
 {
     public string Upload(IFormFile file, string path)
     {

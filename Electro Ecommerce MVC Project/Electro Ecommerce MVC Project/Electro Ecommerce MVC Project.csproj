@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Memory\" />
     <Folder Include="wwwroot\Source\JS\" />
     <Folder Include="wwwroot\uploads\images\products\" />
   </ItemGroup>
