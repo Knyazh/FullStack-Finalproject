@@ -12,8 +12,8 @@ public class ProductListItemViewModel
     public decimal Price { get; set; }
     public string ImageUrl { get; set; }
 
-    public List<Color> Colors { get; set; }
+    public List<Electro_Ecommerce_MVC_Project.Database.Models.Color> Colors { get; set; }
     public List<Memory> Memories { get; set; }
-    public List<Category> Categories { get; set; }
+    public List<Electro_Ecommerce_MVC_Project.Database.Models.Category> Categories { get; set; }
 
 }

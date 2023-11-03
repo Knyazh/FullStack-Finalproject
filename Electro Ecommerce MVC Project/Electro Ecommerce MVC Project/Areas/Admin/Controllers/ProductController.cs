@@ -299,7 +299,7 @@ public class ProductController : Controller
 
         foreach (var memoryID in model.SizeIds)
         {
-            bool result = _DbContext.ProductMemories.Contains(_DbContext.ProductMemories.SingleOrDefault(pm => pm.MemoryId.Equals(MemoryID) && pm.ProductId.Equals(product.Id)));
+            bool result = _DbContext.ProductMemories.Contains(_DbContext.ProductMemories.SingleOrDefault(pm => pm.MemoryId.Equals(memoryID) && pm.ProductId.Equals(product.Id)));
             if (result is false)
             {
                 var newProductMemory = new ProductMemory
