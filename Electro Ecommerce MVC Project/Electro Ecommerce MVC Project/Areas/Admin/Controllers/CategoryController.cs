@@ -72,7 +72,7 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
             var category = _dbContext.Categories.SingleOrDefault(ct => ct.Id == categoryId);
             if (category != null)
             {
-                return Json(new { success = true, Id = category.Id, Name = category.Name, Description = category.Description, CreatedAt = category.CreatedAt, UpdatedAt = category.UpdatedAt, message = "Category information found successfully..." });
+                return Json(new { success = true, Id = category.Id, Name = category.Name, Description = category.Description, CreatedAt = category.CreatedDate, UpdatedAt = category.UpdatedDate, message = "Category information found successfully..." });
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
             {
                 return Json(new { success = false, message = "Invalid data." });
             }
-            return Json(new { success = true, Id = category.Id, Name = category.Name, Description = category.Description, CreatedAt = category.CreatedAt, UpdatedAt = category.UpdatedAt, message = "Category information found successfully..." });
+            return Json(new { success = true, Id = category.Id, Name = category.Name, Description = category.Description, CreatedAt = category.CreatedDate, UpdatedAt = category.UpdatedDate, message = "Category information found successfully..." });
         }
         [HttpPost("update/{categoryId}")]
         public IActionResult Update([FromBody] CategoryAddViewModel newCategory, [FromRoute] int categoryId)
@@ -104,7 +104,7 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
                 category.Description = newCategory.Description; 
                 _dbContext.Categories.Update(category);
                 _dbContext.SaveChanges();
-                return Json(new { success = true, Id = category.Id, Name = newCategory.Name, Description = newCategory.Description, CreatedAt = category.CreatedAt, UpdatedAt = category.UpdatedAt, message = "Category successfully updated..." });
+                return Json(new { success = true, Id = category.Id, Name = newCategory.Name, Description = newCategory.Description, CreatedAt = category.CreatedDate, UpdatedAt = category.UpdatedDate, message = "Category successfully updated..." });
             }
             else
             {
