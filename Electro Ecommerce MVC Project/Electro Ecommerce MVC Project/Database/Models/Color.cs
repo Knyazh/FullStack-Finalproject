@@ -1,12 +1,13 @@
-﻿namespace Electro_Ecommerce_MVC_Project.Database.Models;
+﻿using Electro_Ecommerce_MVC_Project.Database.Base;
 
-public class Color
+namespace Electro_Ecommerce_MVC_Project.Database.Models;
+
+public class Color : BaseEntity<int>, IAuditable
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public string Code { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime UpdatedDate { get; set; }
 
     public List<ProductColor> ProductColors { get; set; }
 }

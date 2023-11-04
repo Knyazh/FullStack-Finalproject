@@ -44,7 +44,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -100,67 +100,67 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = -7,
                             Code = "#fbff00",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Yellow",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = -5,
                             Code = "#000000",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Black",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = -4,
                             Code = "#666666",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Gray",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = -3,
                             Code = "#0052d6",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Blue",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = -2,
                             Code = "#ffffff",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "White",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         },
                         new
                         {
                             Id = -1,
                             Code = "#ff0000",
-                            CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Red",
-                            UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         });
                 });
 
@@ -183,7 +183,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Memories");
+                    b.ToTable("Memories", (string)null);
 
                     b.HasData(
                         new
@@ -220,6 +220,13 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
                             Count = "1 TB",
                             CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
                             UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
+                        },
+                        new
+                        {
+                            Id = -6,
+                            Count = "2 TB",
+                            CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, 0, DateTimeKind.Utc)
                         });
                 });
 
@@ -231,7 +238,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
@@ -246,12 +253,12 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<DateTime>("UpdateDate")
+                    b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Electro_Ecommerce_MVC_Project.Database.Models.ProductCategory", b =>
@@ -266,7 +273,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("Electro_Ecommerce_MVC_Project.Database.Models.ProductColor", b =>
@@ -281,7 +288,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     b.HasIndex("ColorId");
 
-                    b.ToTable("ProductColors");
+                    b.ToTable("ProductColors", (string)null);
                 });
 
             modelBuilder.Entity("Electro_Ecommerce_MVC_Project.Database.Models.ProductMemory", b =>
@@ -296,7 +303,7 @@ namespace Electro_Ecommerce_MVC_Project.Migrations
 
                     b.HasIndex("MemoryId");
 
-                    b.ToTable("ProductMemories");
+                    b.ToTable("ProductMemories", (string)null);
                 });
 
             modelBuilder.Entity("Electro_Ecommerce_MVC_Project.Database.Models.ProductCategory", b =>

@@ -5,8 +5,6 @@
     <meta charset="utf-8" />
     <title style="color: #D10024;">User Registration</title>
 
-    
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <link rel="stylesheet" href="~/assets/Admin/css/AddProduct/CustomStyle.css" asp-append-version="true" />
 
@@ -18,7 +16,7 @@
 
     <section id="AddProduct">
         <div class="Container">
-           
+
             <div class="Row">
                 <form enctype="multipart/form-data" method="POST" asp-controller="product" asp-action="add" id="FormGroupList">
                     <div asp-validation-summary="ModelOnly"></div>
@@ -38,13 +36,18 @@
                         <span asp-validation-for="Price"></span>
                     </div>
                     <div id="FormGroup">
-                        <label asp-for="MemoryIds">Size</label>
+                        <label asp-for="MemoryIds">Memories</label>
                         <select class="selectpicker" asp-for="MemoryIds" multiple data-live-search="true">
-                            <option disabled>Select the size or sizes</option>
-                            @foreach (var memory in Model.Memories)
+                            <option disabled>Select the memory or memories</option>
+
+                            @if (Model.Memories != null)
                             {
-                                <option value="@memory.Id">@memory.Count</option>
+                                @foreach (var memory in Model.Memories)
+                                {
+                                    <option value="@memory.Id">@memory.Count</option>
+                                }
                             }
+
                         </select>
                         <span asp-validation-for="MemoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>
@@ -52,9 +55,14 @@
                         <label asp-for="ColorIds">Color</label>
                         <select class="selectpicker" asp-for="ColorIds" multiple data-live-search="true">
                             <option disabled>Select the color or colors</option>
-                            @foreach (var color in Model.Colors)
+
+                            @if (Model.Colors != null)
                             {
-                                <option value="@color.Id">@color.Name</option>
+
+                                @foreach (var color in Model.Colors)
+                                {
+                                    <option value="@color.Id">@color.Name</option>
+                                }
                             }
                         </select>
                         <span asp-validation-for="ColorIds" class="invalid-feedback" style="display: block"></span>
@@ -63,9 +71,13 @@
                         <label asp-for="CategoryIds">Category</label>
                         <select class="selectpicker" asp-for="CategoryIds" multiple data-live-search="true">
                             <option disabled>Select the category or categories</option>
-                            @foreach (var category in Model.Categories)
+
+                            @if (Model.Categories != null)
                             {
-                                <option value="@category.Id">@category.Name</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
                             }
                         </select>
                         <span asp-validation-for="CategoryIds" class="invalid-feedback" style="display: block"></span>

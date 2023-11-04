@@ -34,8 +34,8 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
             {
                 Name = model.ColorName,
                 Code = model.ColorCode,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                CreatedDate = DateTime.UtcNow,
+                UpdatedDate = DateTime.UtcNow
             };
             _dbContext.Colors.Add(color);
             _dbContext.SaveChanges();
@@ -60,8 +60,8 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
                 Id = color.Id,
                 Name = color.Name,
                 Code = color.Code,
-                CreatedAt = color.CreatedAt,
-                UpdatedAt = color.UpdatedAt,
+                CreatedAt = color.CreatedDate,
+                UpdatedAt = color.UpdatedDate,
             };
             return Json(new { success = true, colorDetails, message = "Color information found successfully..." });
         }
@@ -81,7 +81,7 @@ namespace Electro_Ecommerce_MVC_Project.Areas.Admin.Controllers
                  if (color is null) return Json(new { success = false, message = "Invalid data...Category not available!" });
                  color.Name = model.ColorName;
                  color.Code = model.ColorCode;
-                 color.UpdatedAt = DateTime.UtcNow;  
+                 color.UpdatedDate = DateTime.UtcNow;  
                  _dbContext.Colors.Update(color);    
                  _dbContext.SaveChanges();
                  return Json(new { success = true, id = color.Id, name = color.Name, code = color.Code });

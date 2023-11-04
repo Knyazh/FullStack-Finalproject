@@ -20,7 +20,7 @@ public class ProductAddViewModel
 
     [Required(ErrorMessage = "Please enter memory.")]
     public int[] MemoryIds { get; set; }
-    public List<Memory>? Memories { get; set; }
+    public List<Electro_Ecommerce_MVC_Project.Database.Models.Memory>? Memories { get; set; }
 
     [Required(ErrorMessage = "Please enter minimum one Color.")]
     public int[] ColorIds { get; set; }

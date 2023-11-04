@@ -22,12 +22,12 @@ public class EcommerceDbContext : DbContext
 
             if (entry.State == EntityState.Added)
             {
-                auditable.CreatedAt = DateTime.UtcNow;
-                auditable.UpdatedAt = DateTime.UtcNow;
+                auditable.CreatedDate = DateTime.UtcNow;
+                auditable.UpdatedDate = DateTime.UtcNow;
             }
             else if (entry.State == EntityState.Modified)
             {
-                auditable.UpdatedAt = DateTime.UtcNow;
+                auditable.UpdatedDate = DateTime.UtcNow;
             }
         }
 
@@ -45,8 +45,8 @@ public class EcommerceDbContext : DbContext
             (
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -7,
                     Name = "Yellow",
                     Code = "#fbff00"
@@ -55,40 +55,40 @@ public class EcommerceDbContext : DbContext
        
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -5,
                     Name = "Black",
                     Code = "#000000"
                 },
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -4,
                     Name = "Gray",
                     Code = "#666666"
                 },
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -3,
                     Name = "Blue",
                     Code = "#0052d6"
                 },
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -2,
                     Name = "White",
                     Code = "#ffffff"
                 },
                 new Color
                 {
-                    UpdatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-                    CreatedAt = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    UpdatedDate  = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                    CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                     Id = -1,
                     Name = "Red",
                     Code = "#ff0000"
@@ -194,13 +194,20 @@ public class EcommerceDbContext : DbContext
                  Count = "1 TB",
                  UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
                  CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
-            }
+            },
+             new Memory
+             {
+                 Id = -6,
+                 Count = "2 TB",
+                 UpdatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+                 CreatedDate = new DateTime(2023, 10, 19, 0, 0, 0, DateTimeKind.Utc),
+             }
             );
+
         #endregion
 
         base.OnModelCreating(modelBuilder);
     }
-
 
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
@@ -210,11 +217,6 @@ public class EcommerceDbContext : DbContext
     public DbSet<ProductCategory> ProductCategories { get; set; }
     public DbSet<ProductColor> ProductColors { get; set; }
     public DbSet<ProductMemory> ProductMemories { get; set; }
-
-
-
-
-
 
 
 }

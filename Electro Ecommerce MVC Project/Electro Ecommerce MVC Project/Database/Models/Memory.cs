@@ -1,9 +1,10 @@
-﻿namespace Electro_Ecommerce_MVC_Project.Database.Models;
+﻿using Electro_Ecommerce_MVC_Project.Database.Base;
 
-public class Memory
+namespace Electro_Ecommerce_MVC_Project.Database.Models;
+
+public class Memory : BaseEntity<int>, IAuditable
 {
 
-    public int Id { get; set; }
     public string Count { get; set; }
     public DateTime CreatedDate  { get; set; }
     public DateTime UpdatedDate { get; set; }

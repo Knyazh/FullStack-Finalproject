@@ -54,8 +54,8 @@ public class ProductController : Controller
             Name = viewModel.Name,
             Description = viewModel.Description,
             Price = viewModel.Price,
-            UpdateDate = DateTime.UtcNow,
-            CreateDate = DateTime.UtcNow
+            UpdatedDate = DateTime.UtcNow,
+            CreatedDate = DateTime.UtcNow
         };
 
         if (viewModel.Image is not null)
@@ -134,7 +134,7 @@ public class ProductController : Controller
     public IActionResult Read()
 
     {
-        var products = _DbContext.Products.OrderBy(p => p.CreateDate).ToList();
+        var products = _DbContext.Products.OrderBy(p => p.CreatedDate).ToList();
         var productList = ConvertProductsToViewModel(products);
         var colors = _DbContext.Colors.ToList();
         return View(productList);
@@ -230,7 +230,7 @@ public class ProductController : Controller
         product.Name = model.Name;
         product.Price = model.Price;
         product.Description = model.Description;
-        product.UpdateDate = DateTime.UtcNow;
+        product.UpdatedDate = DateTime.UtcNow;
 
         _DbContext.Products.Update(product);
 
