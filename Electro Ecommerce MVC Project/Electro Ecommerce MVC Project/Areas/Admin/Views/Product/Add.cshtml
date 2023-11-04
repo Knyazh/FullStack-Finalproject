@@ -6,7 +6,7 @@
     <title style="color: #D10024;">User Registration</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-    <link rel="stylesheet" href="~/assets/Admin/css/AddProduct/CustomStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Source/Assets/Admin/css/style.css" asp-append-version="true" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
@@ -20,24 +20,27 @@
             <div class="Row">
                 <form enctype="multipart/form-data" method="POST" asp-controller="product" asp-action="add" id="FormGroupList">
                     <div asp-validation-summary="ModelOnly"></div>
-                    <div id="FormGroup">
-                        <label asp-for="Name">Name</label>
-                        <input type="text" asp-for="Name" placeholder="Please enter product name..." />
-                        <span asp-validation-for="Name"></span>
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="Name" style="font-weight: bold; font-size: 16px;">Name</label>
+                        <input type="text" asp-for="Name" placeholder="Please enter product name..." style="width: 100%; padding: 5px; border: 1px solid #ccc;" />
+                        <span asp-validation-for="Name" style="color: #D10024;"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="Description">Description</label>
-                        <input type="text" asp-for="Description" placeholder="Please enter product description..." />
-                        <span asp-validation-for="Description"></span>
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="Description" style="font-weight: bold; font-size: 16px;">Description</label>
+                        <input type="text" asp-for="Description" placeholder="Please enter product description..." style="width: 100%; padding: 5px; border: 1px solid #ccc;" />
+                        <span asp-validation-for="Description" style="color: #D10024;"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="Price">Price</label>
-                        <input type="number" asp-for="Price" placeholder="Please enter product price..." />
-                        <span asp-validation-for="Price"></span>
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="Price" style="font-weight: bold; font-size: 16px;">Price</label>
+                        <input type="number" asp-for="Price" placeholder="Please enter product price..." style="width: 100%; padding: 5px; border: 1px solid #ccc;" />
+                        <span asp-validation-for="Price" style="color: #D10024;"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="MemoryIds">Memories</label>
-                        <select class="selectpicker" asp-for="MemoryIds" multiple data-live-search="true">
+
+                    <div style="display:flex; justify-content:space-evenly; flex-wrap:wrap; "  >
+
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="MemoryIds" style="font-weight: bold; font-size: 16px;">Memories</label>
+                        <select class="selectpicker" asp-for="MemoryIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the memory or memories</option>
 
                             @if (Model.Memories != null)
@@ -47,18 +50,16 @@
                                     <option value="@memory.Id">@memory.Count</option>
                                 }
                             }
-
                         </select>
                         <span asp-validation-for="MemoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="ColorIds">Color</label>
-                        <select class="selectpicker" asp-for="ColorIds" multiple data-live-search="true">
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="ColorIds" style="font-weight: bold; font-size: 16px;">Color</label>
+                        <select class="selectpicker" asp-for="ColorIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the color or colors</option>
 
                             @if (Model.Colors != null)
                             {
-
                                 @foreach (var color in Model.Colors)
                                 {
                                     <option value="@color.Id">@color.Name</option>
@@ -67,9 +68,9 @@
                         </select>
                         <span asp-validation-for="ColorIds" class="invalid-feedback" style="display: block"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="CategoryIds">Category</label>
-                        <select class="selectpicker" asp-for="CategoryIds" multiple data-live-search="true">
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="CategoryIds" style="font-weight: bold; font-size: 16px;">Category</label>
+                        <select class="selectpicker" asp-for="CategoryIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the category or categories</option>
 
                             @if (Model.Categories != null)
@@ -82,15 +83,16 @@
                         </select>
                         <span asp-validation-for="CategoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>
-                    <div id="FormGroup">
-                        <label asp-for="Image">Image</label>
-                        <input type="file" asp-for="Image" placeholder="Please enter product image" />
+                    </div>
+                    <div id="FormGroup" style="margin-bottom: 20px;">
+                        <label asp-for="Image" style="font-weight: bold; font-size: 16px;">Image</label>
+                        <input type="file" asp-for="Image" placeholder="Please enter product image" style="width: 100%; padding: 5px; border: 1px solid #ccc;" />
                         <span asp-validation-for="Image" class="invalid-feedback" style="display: block"></span>
                     </div>
 
                     <div id="buttonGroup">
-                        <button type="submit">Save</button>
-                        <button type="button" onclick="goBack()">Back</button>
+                        <button type="submit" style="background-color: #D10024; color: #fff; padding: 10px; border: none; cursor: pointer;">Save</button>
+                        <button type="button" onclick="goBack()" style="background-color: #ccc; color: #000; padding: 10px; border: none; cursor: pointer;">Back</button>
                     </div>
                 </form>
             </div>

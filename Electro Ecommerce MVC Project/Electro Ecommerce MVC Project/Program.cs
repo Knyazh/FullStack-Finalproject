@@ -24,9 +24,14 @@ public class Program
                .AddHttpContextAccessor()
                .AddHttpClient();
 
+	 void ConfigureServices(IServiceCollection services)
+		{
+			// Other service registrations
 
+			services.AddScoped<FileService>(); // Register your FileService
+		}
 
-        var app = builder.Build();
+		var app = builder.Build();
 
         app.UseStaticFiles();
         app.MapControllerRoute("default", "{controller=Home}/{action=Index}");
