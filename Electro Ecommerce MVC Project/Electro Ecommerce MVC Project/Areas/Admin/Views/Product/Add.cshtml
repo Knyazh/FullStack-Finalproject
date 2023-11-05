@@ -1,4 +1,7 @@
-﻿@model ProductAddViewModel
+﻿
+@model ProductAddViewModel
+@inject EcommerceDbContext dbContext
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +46,10 @@
                         <select class="selectpicker" asp-for="MemoryIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the memory or memories</option>
 
-                            @if (Model.Memories != null)
-                            {
-                                @foreach (var memory in Model.Memories)
+                                @foreach (var memory in dbContext.Memories)
                                 {
                                     <option value="@memory.Id">@memory.Count</option>
                                 }
-                            }
                         </select>
                         <span asp-validation-for="MemoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>
@@ -58,13 +58,13 @@
                         <select class="selectpicker" asp-for="ColorIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the color or colors</option>
 
-                            @if (Model.Colors != null)
-                            {
-                                @foreach (var color in Model.Colors)
+                     
+                            
+                                @foreach (var color in dbContext.Colors)
                                 {
                                     <option value="@color.Id">@color.Name</option>
                                 }
-                            }
+                            
                         </select>
                         <span asp-validation-for="ColorIds" class="invalid-feedback" style="display: block"></span>
                     </div>
@@ -73,13 +73,13 @@
                         <select class="selectpicker" asp-for="CategoryIds" multiple data-live-search="true" style="width: 100%; padding: 5px; border: 1px solid #ccc;">
                             <option disabled>Select the category or categories</option>
 
-                            @if (Model.Categories != null)
-                            {
-                                @foreach (var category in Model.Categories)
+                                @foreach (var category in dbContext.Categories)
                                 {
                                     <option value="@category.Id">@category.Name</option>
                                 }
-                            }
+                         @*    @if (Model.Categories != null)
+                            {
+                            } *@
                         </select>
                         <span asp-validation-for="CategoryIds" class="invalid-feedback" style="display: block"></span>
                     </div>

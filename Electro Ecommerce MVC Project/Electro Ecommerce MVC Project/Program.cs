@@ -24,13 +24,6 @@ public class Program
                .AddHttpContextAccessor()
                .AddHttpClient();
 
-	 void ConfigureServices(IServiceCollection services)
-		{
-			// Other service registrations
-
-			services.AddScoped<FileService>(); // Register your FileService
-		}
-
 		var app = builder.Build();
 
         app.UseStaticFiles();
