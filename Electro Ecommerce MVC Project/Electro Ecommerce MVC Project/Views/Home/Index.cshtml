@@ -1,6 +1,7 @@
-﻿@using Electro_Ecommerce_MVC_Project.Contracts;
-@inject IFileService fileService
+﻿@inject IFileService fileService
 @inject EcommerceDbContext dbContext
+@inject Category categoryies
+@inject ProductCategory ProductCategory
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
@@ -114,6 +115,7 @@
 											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 										</div>
 									</div>
+
 								}
 
 								<!-- /product -->

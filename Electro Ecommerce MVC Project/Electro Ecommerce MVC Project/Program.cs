@@ -1,4 +1,5 @@
 using Electro_Ecommerce_MVC_Project.Database;
+using Electro_Ecommerce_MVC_Project.Database.Models;
 using Electro_Ecommerce_MVC_Project.Services.Abstracts;
 using Electro_Ecommerce_MVC_Project.Services.Concretes;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +16,15 @@ public class Program
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 
-        builder.Services
+		builder.Services
           .AddDbContext<EcommerceDbContext>(o =>
           {
               o.UseNpgsql(builder.Configuration.GetConnectionString("Default"));
           })
                .AddSingleton<IFileService, FileService>()
-               .AddHttpContextAccessor()
+               .AddScoped<Category>()
+               .AddScoped<ProductCategory>()
+			   .AddHttpContextAccessor()
                .AddHttpClient();
 
 		var app = builder.Build();
